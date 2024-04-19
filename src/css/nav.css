@@ -1,0 +1,147 @@
+.nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #babbc5;
+  padding-top: 36px;
+}
+
+.nav__burger-btn {
+  display: none;
+  width: 55px;
+  height: 55px;
+  border: none;
+  background-color: transparent;
+  position: relative;
+}
+
+.nav__burger-btn span {
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: black;
+  left: 15px;
+  bottom: 27px;
+  background: white;
+}
+
+.nav__burger-btn span:nth-child(1) {
+  transform: translateY(-7px);
+}
+.nav__burger-btn span:nth-child(3) {
+  transform: translateY(7px);
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 700;
+  font-family: "Raleway";
+  text-transform: uppercase;
+  color: #656980;
+}
+
+.nav-color {
+  font-weight: 100;
+  color: #ffffff;
+}
+
+.nav-navigation_list {
+  display: flex;
+}
+
+.nav-navigation_list__item {
+  border-bottom: 3px solid transparent;
+}
+
+.nav-navigation_list__item:hover {
+  border-bottom: 3px solid #babbc5;
+}
+
+.nav-navigation_list__item a {
+  display: block;
+  width: 130px;
+  padding: 7px 0 40px;
+  color: #fff;
+  text-align: center;
+  font-family: "Raleway";
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.nav-navigation_list__item:active {
+  border-bottom: 3px solid #e71414;
+}
+.nav-navigation_list__item a:active {
+  color: #e71414;
+}
+.nav-navigation_list__item.active {
+  color: #e71414;
+}
+
+@media (max-width: 1024px) {
+  .nav-wrap {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .nav-navigation_list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .nav-navigation_list__item a {
+    width: 110px;
+  }
+}
+
+@media (max-width: 320px) {
+  .nav-wrap {
+    border-bottom: 1px solid transparent;
+    padding-top: 0;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  .nav__burger-btn {
+    display: block;
+    cursor: pointer;
+  }
+  .nav-navigation {
+    height: 0;
+    position: absolute;
+    right: 0;
+    top: 80px;
+    right: 0;
+    width: 100vw;
+    background: transparent;
+    transition: 0.3s;
+    overflow: hidden;
+  }
+  .nav-navigation_list__item a {
+    text-align: left;
+    padding: 21px 0px;
+  }
+  .nav-navigation_list {
+    display: block;
+    width: fit-content;
+    margin: 0 0 0 15px;
+    transition: 0.8s;
+    opacity: 3;
+  }
+  .nav-navigation.active {
+    height: 440px;
+  }
+  .header-contant {
+    transition: opacity 0.5s ease;
+  }
+  .hide {
+    opacity: 0;
+  }
+  .nav-navigation.active ul li a:active {
+    color: #e71414;
+  }
+}
